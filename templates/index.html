@@ -20,11 +20,16 @@
           <button type="submit" class="btn">Predict country where the UFO is seen</button>
         </form>
 
-        <form action="{{ url_for('train_ufo') }}" method="get">
-            <button type="button" class="btn">Train the model</button>
+        <form method="get" action="/train_ufo">
+          <input type="submit" value="Train the model" name="train_ufo_model"/>
+        </form>
+
+        <form method="get" action="/delete_ufo">
+          <input type="submit" value="Delete model" name="delete_ufo_model"/>
         </form>
 
         <p>{{ prediction_text }}</p>
+        <p>{{ model_exist }}</p>
 
       </div>
 
